@@ -1,0 +1,17 @@
+<app-template></app-template>
+<div id="city-choser">
+  <h3>Select the city and get the current data</h3>
+  <form #cityForm="ngForm" (ngSubmit)="onSubmit()">
+      <label>Enter a city</label>
+        <input type="text" #name="ngModel" name="name" [(ngModel)]="city.name">
+      <input type="submit" value="Request data">
+    </form>
+
+  </div>
+  
+  <div *ngIf="errorMessage">
+    <app-error-message-city></app-error-message-city>
+  </div>
+  <div *ngIf="successMessage" class="alert alert-success" role="alert">
+    <p>{{city}} added to your register</p>
+  </div>

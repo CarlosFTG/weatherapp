@@ -1,0 +1,8 @@
+<app-template></app-template>
+<app-select-view></app-select-view>
+<h6 style="margin-left:3%">If charts are not rendered, please, do zoom in or out with CTRL+ the mouse scroll</h6>
+<div id="chartContainer">
+    <div class="chart" *ngIf="chart">
+        <canvas #canvas id="canvas">{{ chart }}</canvas>
+    </div>
+</div>

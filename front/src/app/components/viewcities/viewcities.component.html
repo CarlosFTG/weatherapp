@@ -1,0 +1,18 @@
+ <app-template></app-template>
+<app-select-view></app-select-view>
+ <div id="container">
+   <div id="data-container">
+     <ul *ngFor="let weather of weathersCity"  class="card" style="width: 18rem" id="cards" > 
+         <h4 >City:</h4>{{weather.city}}
+         <h4 class="card-title">Date:</h4> {{weather.date}}
+         <h5>Temperature:</h5> {{weather.temperature}}
+         <h5>Precipitations:</h5> {{weather.precipitations}}
+
+         <h5>Clouds:</h5> {{weather.clouds}}
+         <!-- <button class="btn btn-danger" (click)="removeSingleData()">Delete</button> -->
+     </ul>
+    </div>
+ </div>
+
+
+ 

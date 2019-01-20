@@ -1,0 +1,8 @@
+#container{ background-image:url("https://hdwallsource.com/img/2014/2/thumb/sky-wallpaper-41417-42411-hd-wallpapers-thumb.jpg"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;}
+
+#cards{
+
+    display: inline-block;
+    margin-left: 3px;
+    margin-top: 5px;
+}

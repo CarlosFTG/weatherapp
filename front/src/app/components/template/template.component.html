@@ -1,0 +1,11 @@
+<div><h1>Hi {{identity.name}}</h1></div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="nav-link" (click)="directToUserProfile()"style="color:aliceblue">User profile</a>
+  <a class="nav-link" (click)="viewCitiesList()" style="color:aliceblue">View Weather By City</a>
+  <a class="nav-link" (click)="directToGetCurrentWeather()" style="color:aliceblue">Get current weather</a>
+  <a class="nav-link" (click)="logOut()" style="color:red">Log Out</a>
+</nav>
+<div id="body"></div>
+
+
