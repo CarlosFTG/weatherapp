@@ -7,7 +7,7 @@ function getWheather(req,res){
     var city=req.body.city;
     var weather=new Weather;
  
-    request("http://api.apixu.com/v1/current.json?key=2605ad345d984a44a3e102451182912&q="+city, function (error, response, body) {
+    request("http://api.apixu.com/v1/current.json?key=********************q="+city, function (error, response, body) {
     console.log('error:', error); 
     console.log('statusCode:', response && response.statusCode); 
     var params=req.body._id;
