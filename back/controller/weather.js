@@ -57,11 +57,8 @@ function getCityData(req,res){
     }).sort({date: 1});
 }
 
-function remove(req,res){
-    var params=req.body._id;
-    
-}
 
 
 
-module.exports={getWheather,remove,getCityData};
+
+module.exports={getWheather,getCityData};
