@@ -55,7 +55,7 @@ function createUser(req, res){
             secure: true,
             auth: {
                 user: 'carlosTejedaJSDeveloper@gmail.com',
-                pass: 'AranjueZ86!!'
+                pass: 'xxxxxxx'
             }
         });
     
