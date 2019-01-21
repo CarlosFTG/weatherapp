@@ -1,5 +1,5 @@
 # weatherapp
-webapp that gets, stores and render weather dataobtained from APIXUs
+webapp that gets, stores and render weather data from APIXU
 
 This app has been developed with the MEAN stack.
 
