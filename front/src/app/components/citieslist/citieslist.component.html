@@ -1,7 +1,7 @@
 <app-template></app-template>
 
 <div *ngIf="cities.length<1">
-    <h3>You have no data storaged, go to Get current weather and get your first</h3>
+    <h3>You have no data, go to Get current weather and get your first</h3>
 </div>
 <ul *ngFor="let city of cities">
     <a (click)="directToViewByCity(city)">{{city}}</a>
