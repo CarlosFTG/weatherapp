@@ -67,7 +67,7 @@ function createUser(req, res){
             text: 'Hi '+user.name+' welcome to weather app', // plain text body
             html: 'Hi <b>'+user.name+'</b> welcome to weather app.'+
             '</br>You are now registered in weather app, this is you data acces: </br>'+
-            '<b>Username</b>: '+ user.userName+'</br><b>Password</b>: '+user.password// html body
+            </br>You are now registered in weather app whith this email: </br>'+ user.email
         };
     
         // send mail with defined transport object
