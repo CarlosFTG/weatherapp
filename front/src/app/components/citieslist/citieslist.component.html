@@ -3,6 +3,10 @@
 <div *ngIf="cities.length<1">
     <h3>You have no data, go to Get current weather and get your first</h3>
 </div>
-<ul *ngFor="let city of cities">
-    <a (click)="directToViewByCity(city)">{{city}}</a>
+<ul id="list" *ngFor="let city of cities">
+    <a (click)="directToViewByCity(city)">{{city}}</a> 
 </ul>
+
+<div id="map">
+    <map-component></map-component>
+</div>
