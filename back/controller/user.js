@@ -139,6 +139,70 @@ function login(req, res){
     })
 }
 
+//find the cities info that the user has registered
+function findUsersCities(req,res){
 
+    let weathersFound;
+    var name;
+    var averageRain;
+    var averageTemp;
+    var cityFound;
+    var cityFeatures={
+        cities:[]}
 
-module.exports = {createUser,login,removeUser}
+    let id=req.body._id;
+
+    var infoArray=[];
+   
+    User.findById(id,async function(err,userFound){
+        if(err){
+            console.log(err)
+        }else{
+            var tempArray=[];
+            var precipArray=[];
+        try{
+                for(let i=0;i<userFound.cities.length;i++){
+                    var info={
+                        name,
+                        averageTemp,
+                        averageRain,
+                        "type": "Point",
+                        coordinates:[]
+                    }
+
+                    cityFound = await City.findOne({'city':userFound.cities[i]});
+                    weathersFound =await Weather.find({'city':userFound.cities[i],'userId':userFound._id},function(err,weather){
+                    })
+                    info.name=cityFound.city
+                    info.coordinates=(cityFound.coords);
+                    infoArray.push(info)
+                    cityFeatures.cities.push(info)
+                    for(let z=0;z<weathersFound.length;z++){
+                        
+                        tempArray.push(weathersFound[z].temperature);
+                        precipArray.push(weathersFound[z].precipitations)
+                        info.averageTemp=calculateAverage(tempArray);
+                        info.averageRain=calculateAverage(precipArray);
+                    } 
+            };
+            cityFeatures.cities.push(info)
+            res.status(200).send({cityFeatures});
+        }catch (e) {
+        }
+            
+        }
+    })
+    
+}
+
+function calculateAverage(data){
+    var sum=0;
+    var counter=0;
+    for(let z=0;z<data.length;z++){
+        sum+=data[z]
+        counter++
+    }
+    return sum/counter;
+}
+
+module.exports = {createUser,login,removeUser,findUsersCities}
