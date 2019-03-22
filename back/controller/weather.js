@@ -57,6 +57,25 @@ function getCityData(req,res){
     }).sort({date: 1});
 }
 
+function addCityToUserCitiesArray(userId,cityEntrance){
+    User.findOne({'_id':userId},function(err,userFound){
+        if(err){
+            console.log(500).send(error);
+        }else{
+            console.log('user found ' +userFound._id)
+            if(userFound){
+                User.findById({'_id':userFound._id},{userFoundcities:1},function(err,cities){
+                    if(err){
+                        console.log(error);
+                    }else if(!cities.cities){
+                        User.updateOne({'_id':userFound._id},{$addToSet: {"cities":[cityEntrance]}},function(err,updated){
+                        })
+                    }
+                })
+            }
+        }
+       })
+}
 
 
 
