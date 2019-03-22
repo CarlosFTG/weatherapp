@@ -9,4 +9,5 @@ api.use(cors())
 
 api.post('/cities/getCity',cors(), CityController.getCity);
 api.post('/cities/showByCity',cors(), CityController.showCity);
+api.post('/cities/getCityCoords',cors(),CityController.getCityCoords)
 module.exports = api;
