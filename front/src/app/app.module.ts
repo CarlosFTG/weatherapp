@@ -21,12 +21,13 @@ import { SelectViewComponent } from './components/select-view/select-view.compon
 import {CitiesService} from './services/cities.service'
 import {WeatherService} from './services/weather.service';
 import {UserService} from './services/user.service';
+import {MapService} from './services/map.service';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { MainwelcomeComponent } from './components/mainwelcome/mainwelcome.component';
 import { ErrorMessageLRComponent } from './components/error-message-lr/error-message-lr.component';
 import { ErrorMessageCityComponent } from './components/error-message-city/error-message-city.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { MapComponent } from './components/map/map.component';
 
 
 
@@ -35,13 +36,13 @@ import { FooterComponent } from './components/footer/footer.component';
   declarations: [
     AppComponent, LoginComponent,DashboardComponent,
      ViewalldataComponent,
-     ViewcitiesComponent, TemplateComponent, GetCurrentWeatherComponent, CitieslistComponent, RegisterComponent, UserProfileComponent, MainwelcomeComponent, ErrorMessageLRComponent, ErrorMessageCityComponent, FooterComponent,ChartComponent,SelectViewComponent, 
+     ViewcitiesComponent, TemplateComponent, GetCurrentWeatherComponent, CitieslistComponent, RegisterComponent, UserProfileComponent, MainwelcomeComponent, ErrorMessageLRComponent, ErrorMessageCityComponent, FooterComponent,ChartComponent,SelectViewComponent, MapComponent, 
   ],
   imports: [
-    BrowserModule,FormsModule, ReactiveFormsModule,HttpModule,RouterModule,routing,ChartsModule
+    BrowserModule,FormsModule, ReactiveFormsModule,HttpModule,RouterModule,routing,ChartsModule,
    
   ],
-  providers: [CitiesService,WeatherService,CitieslistComponent,UserService],
+  providers: [CitiesService,WeatherService,CitieslistComponent,UserService,MapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
